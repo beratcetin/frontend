@@ -1,5 +1,4 @@
-import "../App.css";
-function AnaSayfa() {
+function Home() {
   return (
     <>
       <div>
@@ -9,4 +8,4 @@ function AnaSayfa() {
   );
 }
 
-export default AnaSayfa;
+export default Home;
