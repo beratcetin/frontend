@@ -1,13 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Rating from "./Rating";
-import FoodAndDrink from "./FoodAndDrink";
+import FoodAndDrinkList from "./FoodAndDrinkList";
 import Header from "./Header";
-import Hours from "./Hours";
-import Comment from "./Comment";
-import venueReducer from "../services/VenueReducer";
+import HourList from "./HourList";
+import CommentList from "./CommentList";
+import VenueReducer from "../services/VenueReducer";
+import React from "react";
 const VenueDetail = () => {
-  const [venue, dispatchVenue] = React.useReducer(venueReducer, {
+  const [venue, dispatchVenue] = React.useReducer(VenueReducer, {
     data: {},
     isLoading: false,
     isSuccess: false,
@@ -32,7 +33,7 @@ const VenueDetail = () => {
                     </div>
                     <div className="panel-body ">
                       {venue.isSuccess ? (
-                        <Hours saatler={venue.data.hours} />
+                        <HourList saatler={venue.data.hours} />
                       ) : (
                         ""
                       )}
@@ -44,7 +45,7 @@ const VenueDetail = () => {
                     </div>
                     <div className="panel-body ">
                       {venue.isSuccess ? (
-                        <FoodAndDrink foodAndDrinkList={venue.data.foodAndDrinkList} />
+                        <FoodAndDrinkList foodAndDrinkList={venue.data.foodAndDrinkList} />
                       ) : (
                         ""
                       )}
@@ -82,7 +83,7 @@ const VenueDetail = () => {
                   </div>
                   <div className="panel-body ">
                     {venue.isSuccess ? (
-                      <Comment commentList={venue.data.commentList} />
+                      <CommentList commentList={venue.data.commentList} />
                     ) : (
                       ""
                     )}

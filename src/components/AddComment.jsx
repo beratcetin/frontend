@@ -1,9 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useLocation,useNavigate } from "react-router-dom";
+import VenueReducer from "../services/VenueReducer";
+import Header from "./Header";
+import React from "react";
 function AddComment() {
   const { id } = useParams();
   var navigate=useNavigate();
-  let location = useLocation();
+  const [comment, dispatchComment] = React.useReducer(VenueReducer, {
+    user: {},
+    isSuccess:false
+  });
   const onSubmit = (evt) => {
   
   };
@@ -11,12 +17,11 @@ function AddComment() {
     return navigate(`/venue/${id}`);
   } else
   return (
-    <div>
-        <div className="row page-header">
-          <div className="col-lg-12 ">
-            <h1> {location.state.name} mekanına yorum yap</h1>
-          </div>
-        </div>
+    <>
+       <Header
+        headerText={"Mekan"}
+        motto=" mekanına yorum yap"
+      />
         <div className="row">
           <div className="col-xs-12 col-md-6">
             <form
@@ -68,7 +73,7 @@ function AddComment() {
             </form>
           </div>
         </div>
-    </div>
+    </>
   );
 }
 export default AddComment;

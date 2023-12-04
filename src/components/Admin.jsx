@@ -1,10 +1,13 @@
+import Header from "./Header";
 function Admin() {
-    return (
-      <>
-          <h1>Yönetici</h1>
-      </>
-    );
-  }
-  
-  export default Admin;
-  
+  return (
+    <>
+      <Header
+        headerText="Yönetici"
+        motto="Mekanlarınızı Yönetin!"
+      />
+    </>
+  );
+}
+
+export default Admin;

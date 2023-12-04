@@ -1,62 +1,47 @@
 import InputWithLabel from "./InputWithLabel";
-import VenuesList from "./VenuesList";
-import venueReducer from "../services/VenueReducer";
+import VenueList from "./VenueList";
+import VenueReducer from "../services/VenueReducer";
+import Header from "./Header";
 import React from "react";
 const useCookies = (key, defaultValue) => {
-  const [value, setValue] = React.useState(
+  const [cookie, setCookie] = React.useState(
     localStorage.getItem(key) || defaultValue
   );
   React.useEffect(() => {
-    localStorage.setItem(key, value);
-  }, [value, key]);
-  return [value, setValue];
+    localStorage.setItem(key, cookie);
+  }, [cookie, key]);
+  return [cookie, setCookie];
 };
 
 const Home = () => {
-  const [searchVenue, setSearchMenu] = useCookies("searchVenue", "");
-  const [venues, setVenues] = React.useReducer(venueReducer, {
+  const [searchVenue, setSearchVenue] = useCookies("searchVenue", "");
+  const [venues, setVenues] = React.useReducer(VenueReducer, {
     data: [],
     isLoading: false,
     isSuccess: false,
     isError: false,
   });
-  const [coordinate, setCoordinate] = React.useState({ lat: 0, long: 0 });
-  React.useEffect(() => {
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        setCoordinate({
-          lat: position.coords.latitude,
-          long: position.coords.longitude,
-        });
-      });
-    }
-  }, []);
   const search = (event) => {
-    setSearchMenu(event.target.value);
+    setSearchVenue(event.target.value);
   };
-  const filteredVenue = venues.data.filter(
+  const filteredVenues = venues.data.filter(
     (venue) =>
       venue.name.toLowerCase().includes(searchVenue.toLowerCase()) ||
       venue.address.toLowerCase().includes(searchVenue.toLowerCase())
   );
   return (
     <div>
-      <div className="page-header">
-        <div className="row">
-          <div className="col-lg-6">
-            <h1>
-              Mekanbul <small>Civardaki mekanları Keşfedin!</small>
-            </h1>
-          </div>
-        </div>
-      </div>
+      <Header
+        headerText="Mekanbul"
+        motto="Civarınızdaki Mekanlarınızı Keşfedin!"
+      />
       <InputWithLabel
         id="arama"
-        etiket="Mekan Ara:"
-        tur="text"
+        label="Mekan Ara:"
+        typ="text"
         isFocused
-        onDegerDegisim={search}
-        deger={searchVenue}
+        onInputChange={search}
+        value={searchVenue}
       />
       <hr />
       {venues.isError && (
@@ -70,7 +55,7 @@ const Home = () => {
         </p>
       ) : (
         <div className="row">
-          <VenuesList venues={filteredVenue} admin={false} />
+          <VenueList venues={filteredVenues} admin={false} />
         </div>
       )}
     </div>

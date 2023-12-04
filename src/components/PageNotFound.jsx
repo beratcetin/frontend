@@ -1,12 +1,9 @@
-function PageNotFound(){
+import Header from "./Header";
+function PageNotFound() {
   return (
     <div>
-      <div className="row page-header">
-        <div className="col-lg-12 ">
-          <h1>Sayfa Bulunamadı</h1>
-        </div>
-      </div>
+      <Header headerText="Hata" motto="Sayfa Bulunamadı!" />
     </div>
   );
 }
-  export default PageNotFound;
+export default PageNotFound;

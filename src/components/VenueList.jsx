@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Venue from "./Venue";
 import AdminButton from "./AdminButton";
-const VenuesList = ({ venues, admin }) => {
+const VenueList = ({ venues, admin }) => {
   var navigate = useNavigate();
   const performClick = (evt) => {
     if (evt.target.name === "Mekan Ekle") {
-      return navigate("/admin/managevenue");
+      return navigate("/admin/addupdate");
     }
   };
   return (
@@ -19,8 +19,8 @@ const VenuesList = ({ venues, admin }) => {
           <div className="row">
             <div className="column pull-right">
               <AdminButton
-                ad="Mekan Ekle"
-                tur="success"
+                name="Mekan Ekle"
+                type="success"
                 onClick={performClick}
               />
             </div>
@@ -32,4 +32,4 @@ const VenuesList = ({ venues, admin }) => {
     </div>
   );
 };
-export default VenuesList;
+export default VenueList;

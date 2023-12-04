@@ -1,14 +1,6 @@
 import Rating from "./Rating";
-const Comment = ({ commentList }) => {
- var formatDate=function(date){
-    var date = new Date(date);
-    var months= [ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs","Haziran","Temmuz", "Ağustos","Eylül","Ekim","Kasım", "Aralık" ];
-    var dateInfo = date.getDate();
-    var monthInfo = months[date.getMonth()];
-    var yearInfo = date.getFullYear();
-    var result=dateInfo + ' ' + monthInfo + ' ' + yearInfo;
-    return result
-  }
+import {formatDate} from "../services/Utils";
+const CommentList = ({ commentList }) => {
       return commentList.map((comment, index) => (
           <div key={index} className="row">
             <div className="review">
@@ -24,5 +16,5 @@ const Comment = ({ commentList }) => {
           </div>
       ));
     }
-  export default Comment;
+  export default CommentList;
   

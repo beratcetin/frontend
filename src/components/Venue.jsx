@@ -1,23 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Rating from "./Rating";
-import FoodAndDrink from "./FoodAndDrink";
+import FoodAndDrinkList from "./FoodAndDrinkList";
 import AdminButton from "./AdminButton";
 import { useNavigate } from "react-router-dom";
+import {formatDistance} from "../services/Utils";
 const Venue = ({ venue, admin }) => {
-  var navigate = useNavigate();
   const performClick= (evt) => {
-  };
-
-  var formatDistance = function (distance) {
-    var newDistance, unit;
-    if (distance > 1) {
-      newDistance = parseFloat(distance).toFixed(1);
-      unit = " km";
-    } else {
-      newDistance = parseInt(distance * 1000, 10);
-      unit = " m";
-    }
-    return newDistance + unit;
   };
   return (
     <div className="list-group">
@@ -36,7 +24,7 @@ const Venue = ({ venue, admin }) => {
           {admin ? (<AdminButton tur="info" ad="Güncelle" onClick={performClick}/>):""}
           <p className="address"> {venue.address}</p>
           <p>
-            <FoodAndDrink foodandDrinkList={venue.foodAndDrink} />
+            <FoodAndDrinkList foodandDrinkList={venue.foodAndDrink} />
           </p>
          
         </div>
