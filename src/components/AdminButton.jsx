@@ -1,10 +1,11 @@
-function AdminButon() {
+function AdminButton({name,type,onClick}) {
+   
     return (
-      <>
-          <h1>Admin button</h1>
-      </>
+        <span className="btn pull-right"> 
+        <button className={`btn btn-${type} pull-right`} onClick={onClick} name={name}>{name}</button>
+        </span>
     );
+
   }
-  
-  export default AdminButon;
+  export default AdminButton;
   

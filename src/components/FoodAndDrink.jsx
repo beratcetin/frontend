@@ -1,10 +1,10 @@
-function FoodAndDrink() {
-    return (
-      <>
-          <h1>Yemek ve içecekler</h1>
-      </>
-    );
-  }
-  
-  export default FoodAndDrink;
-  
+const FoodAndDrink = ({ foodAndDrinkList }) => {
+    return foodAndDrinkList.map((fan, index) => (
+      <span key={index}>
+        <span className="label label-warning"> {fan}</span>
+        &nbsp;
+      </span>
+    ));
+};
+
+export default FoodAndDrink;

@@ -1,4 +1,4 @@
-function ManageVenue() {
+function AddUpdateVenue() {
     return (
       <>
           <h1>Mekanları Yönet</h1>
@@ -6,5 +6,5 @@ function ManageVenue() {
     );
   }
   
-  export default ManageVenue;
+  export default AddUpdateVenue;
   
