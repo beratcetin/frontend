@@ -1,6 +1,6 @@
 import axios from "axios";
 export default axios.create({
-  baseURL: "http://localhost:5173/venues.json",
+  baseURL: "https://mekanbul-frontend.vercel.app",
   headers: {
     "Accept": "application/json",
     "Content-Type": "application/json;charset=UTF-8"
