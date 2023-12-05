@@ -3,6 +3,8 @@ import VenueList from "./VenueList";
 import VenueReducer from "../services/VenueReducer";
 import Header from "./Header";
 import React from "react";
+import axios from "axios";
+import VenueDataService from "../services/VenueDataService";
 const useCookies = (key, defaultValue) => {
   const [cookie, setCookie] = React.useState(
     localStorage.getItem(key) || defaultValue
@@ -15,7 +17,7 @@ const useCookies = (key, defaultValue) => {
 
 const Home = () => {
   const [searchVenue, setSearchVenue] = useCookies("searchVenue", "");
-  const [venues, setVenues] = React.useReducer(VenueReducer, {
+  const [venues, dispatchVenues] = React.useReducer(VenueReducer, {
     data: [],
     isLoading: false,
     isSuccess: false,
@@ -24,11 +26,25 @@ const Home = () => {
   const search = (event) => {
     setSearchVenue(event.target.value);
   };
+  React.useEffect(() => {
+    dispatchVenues({ type: "FETCH_INIT" });
+    try {
+      VenueDataService.listJsonVenues().then((result) => {
+        dispatchVenues({
+          type: "FETCH_SUCCESS",
+          payload: result.data,
+        });
+      });
+    } catch {
+      dispatchVenues({ type: "FETCH_FAILURE" });
+    }
+  }, []);
   const filteredVenues = venues.data.filter(
     (venue) =>
       venue.name.toLowerCase().includes(searchVenue.toLowerCase()) ||
       venue.address.toLowerCase().includes(searchVenue.toLowerCase())
   );
+
   return (
     <div>
       <Header
@@ -53,10 +69,12 @@ const Home = () => {
         <p>
           <strong>Mekanlar Yükleniyor ...</strong>
         </p>
-      ) : (
+      ) : venues.isSuccess ? (
         <div className="row">
           <VenueList venues={filteredVenues} admin={false} />
         </div>
+      ) : (
+        ""
       )}
     </div>
   );

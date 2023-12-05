@@ -6,6 +6,10 @@ class VenueDataService {
     return http.get("/admin");
   }
 
+  listJsonVenues() {
+    return http.get("");
+  }
+
   nearbyVenues(lat,long) {
     return http.get(`/venue?lat=${lat}&long=${long}`);
   }

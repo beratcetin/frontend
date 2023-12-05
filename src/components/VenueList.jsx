@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Venue from "./Venue";
 import AdminButton from "./AdminButton";
 const VenueList = ({ venues, admin }) => {
+
   var navigate = useNavigate();
   const performClick = (evt) => {
     if (evt.target.name === "Mekan Ekle") {
@@ -11,7 +12,7 @@ const VenueList = ({ venues, admin }) => {
   return (
     <div>
       {venues.map((venue, index) => (
-        <Venue key={index} mekan={venue} admin={admin} />
+        <Venue key={index} venue={venue} admin={admin} />
       ))}
 
       {admin ? (

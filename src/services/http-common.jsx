@@ -1,8 +1,6 @@
 import axios from "axios";
 export default axios.create({
-  withCredentials: true,
-  baseURL: "http://localhost:5173/api",
-
+  baseURL: "http://localhost:5173/venues.json",
   headers: {
     "Accept": "application/json",
     "Content-Type": "application/json;charset=UTF-8"

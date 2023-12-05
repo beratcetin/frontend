@@ -12,7 +12,7 @@ const Venue = ({ venue, admin }) => {
       <div className="col-xs-12 col-sm-12">
         <div className="col-xs-12 list-group-item">
           <h4>
-            <NavLink to={`/venue/${venue._id}`} state={{ id: venue._id }}>
+            <NavLink to={`/venue/${venue.id}`} state={{ id: venue.id }}>
               {venue.name}{" "}
             </NavLink>
             <Rating score={venue.rating} />
@@ -24,7 +24,7 @@ const Venue = ({ venue, admin }) => {
           {admin ? (<AdminButton tur="info" ad="Güncelle" onClick={performClick}/>):""}
           <p className="address"> {venue.address}</p>
           <p>
-            <FoodAndDrinkList foodandDrinkList={venue.foodAndDrink} />
+            <FoodAndDrinkList foodAndDrinkList={venue.foodanddrink} />
           </p>
          
         </div>

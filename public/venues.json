@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Starbucks",
+    "address": "Centrum Garden",
+    "rating": 5,
+    "foodanddrink": ["çay", "kahve", "pasta"],
+    "distance": 5,
+    "hours": [
+      {
+        "days": "Pazartesi-Cuma",
+        "open": "9:00",
+        "close": "23:00"
+      },
+      {
+        "days": "Cumartesi-Pazar",
+        "open": "11:00",
+        "close": "17:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Barida Cam Kafe",
+    "address": "Bizim Bölümün Karşısı",
+    "rating": 2,
+    "foodanddrink": ["çay", "kahve", "simit", "poaça"],
+    "distance": 1,
+    "hours": [
+      {
+        "days": "Pazartesi-Cuma",
+        "open": "9:00",
+        "close": "23:00"
+      },
+      {
+        "days": "Cumartesi-Pazar",
+        "open": "11:00",
+        "close": "17:00"
+      }
+    ]
+  }
+]
