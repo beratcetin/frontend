@@ -15,7 +15,7 @@ const Venue = ({ venue, admin }) => {
             <NavLink to={`/venue/${venue.id}`} state={{ id: venue.id }}>
               {venue.name}{" "}
             </NavLink>
-            <Rating score={venue.rating} />
+            <Rating rating={venue.rating} />
           </h4>
           <span className="span badge pull-right badge-default">
             {!admin ? formatDistance(venue.distance) : ""}
