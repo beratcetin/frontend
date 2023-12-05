@@ -29,6 +29,7 @@ const Home = () => {
   React.useEffect(() => {
     dispatchVenues({ type: "FETCH_INIT" });
     try {
+      
       VenueDataService.listJsonVenues().then((result) => {
         dispatchVenues({
           type: "FETCH_SUCCESS",
@@ -60,21 +61,20 @@ const Home = () => {
         value={searchVenue}
       />
       <hr />
-      {venues.isError && (
+      {venues.isError ? (
         <p>
           <strong>Birşeyler ters gitti! ...</strong>
         </p>
-      )}
-      {venues.isLoading ? (
+      ) : venues.isLoading ? (
         <p>
           <strong>Mekanlar Yükleniyor ...</strong>
         </p>
-      ) : venues.isSuccess ? (
-        <div className="row">
-          <VenueList venues={filteredVenues} admin={false} />
-        </div>
       ) : (
-        ""
+        venues.isSuccess && (
+          <div className="row">
+            <VenueList venues={filteredVenues} admin={false} />
+          </div>
+        )
       )}
     </div>
   );

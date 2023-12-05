@@ -6,6 +6,10 @@
     "rating": 5,
     "foodanddrink": ["çay", "kahve", "pasta"],
     "distance": 5,
+    "coordinates": [
+      37.83226584629666,
+      30.524732239878013
+    ],
     "hours": [
       {
         "days": "Pazartesi-Cuma",
@@ -26,6 +30,10 @@
     "rating": 2,
     "foodanddrink": ["çay", "kahve", "simit", "poaça"],
     "distance": 1,
+    "coordinates": [
+      37.83226584629666,
+      30.524732239878013
+    ],
     "hours": [
       {
         "days": "Pazartesi-Cuma",
