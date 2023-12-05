@@ -1,5 +1,5 @@
 const HourList = ({ hourList }) => {
-  return hoursList.map((hour, index) => (
+  return hourList.map((hour, index) => (
     <p key={index}>
       {hour.days}: {hour.open}-{hour.close}
     </p>

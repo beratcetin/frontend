@@ -6,6 +6,7 @@ import React from "react";
 function AddComment() {
   const { id } = useParams();
   var navigate=useNavigate();
+  let location = useLocation();
   const [comment, dispatchComment] = React.useReducer(VenueReducer, {
     user: {},
     isSuccess:false
@@ -19,7 +20,7 @@ function AddComment() {
   return (
     <>
        <Header
-        headerText={"Mekan"}
+        headerText={location.state.name}
         motto=" mekanına yorum yap"
       />
         <div className="row">

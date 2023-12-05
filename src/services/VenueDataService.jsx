@@ -7,7 +7,7 @@ class VenueDataService {
   }
 
   listJsonVenues() {
-    return http.get("");
+    return http.get();
   }
 
   nearbyVenues(lat,long) {
