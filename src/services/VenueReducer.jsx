@@ -14,7 +14,7 @@ const VenueReducer = (state, action) => {
           case "ADD_VENUE_SUCCESS":
             return {
               ...state,
-              isMekanEkleSuccess:true
+              isSuccess:true
             };
             case "ADD_VENUE_FAILURE":
               return {
