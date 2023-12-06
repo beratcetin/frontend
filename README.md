@@ -39,4 +39,6 @@ Uygulamanın iskeleti
 4. **public/venues.json:** REST API yazana kadar, geçici olarak mekan verilerinin çekileceği dosya
 5. **public/favicon.ico:** Websitesi ikonu
 
+## Sitenin Tüm Bileşen Yapısı
+
 ![Bileşenler](<Frontend Tasarım.png>)
