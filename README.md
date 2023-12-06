@@ -1,7 +1,6 @@
 # Mekabul React Front-End
-Uygulamanın iskeleti
 
-[https://mekanbul-frontend-asimsinan.vercel.app](https://mekanbul-frontend-asimsinan.vercel.app)
+Vercel linki: [https://mekanbul-frontend-asimsinan.vercel.app](https://mekanbul-frontend-asimsinan.vercel.app)
 
 ## Bileşenler
 1. **Navbar:** Navigasyon Çubuğu
