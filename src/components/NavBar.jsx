@@ -24,7 +24,7 @@ function NavBar() {
             <li>
             <NavLink to={"about"}>Hakkında</NavLink> 
             </li>
-          
+        
           </ul>
         </div>
       </div>

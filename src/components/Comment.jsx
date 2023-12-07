@@ -1,6 +1,7 @@
 import Rating from "./Rating";
 import {formatDate} from "../services/Utils";
 const Comment = ({ comment,index }) => {
+  
   return (
     <div key={index} className="row">
       <div className="review">

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams,useLocation } from "react-router-dom";
 import Rating from "./Rating";
 import FoodAndDrinkList from "./FoodAndDrinkList";
 import Header from "./Header";
@@ -16,6 +16,8 @@ const VenueDetail = () => {
     isError: false,
   });
   const { id } = useParams();
+  let location = useLocation();
+ 
   React.useEffect(() => {
     dispatchVenue({ type: "FETCH_INIT" });
     VenuDataService.listJsonVenues()
@@ -93,7 +95,7 @@ const VenueDetail = () => {
                   <div className="panel-heading ">
                     <NavLink
                       className="btn btn-default pull-right"
-                      to={`/venue/${id - 1}/comment/new`}
+                      to={`/venue/${id}/comment/new`}
                       state={{ name: venue.data[id - 1].name }}
                     >
                       Yorum Ekle{" "}

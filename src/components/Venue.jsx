@@ -11,7 +11,7 @@ const Venue = ({ venue, admin }) => {
       <div className="col-xs-12 col-sm-12">
         <div className="col-xs-12 list-group-item">
           <h4>
-            <NavLink to={`/venue/${venue.id}`} state={{ id: venue.id }}>
+            <NavLink to={`/venue/${venue.id}`}>
               {venue.name}{" "}
             </NavLink>
             <Rating rating={venue.rating} />
