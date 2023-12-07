@@ -19,8 +19,8 @@ const Venue = ({ venue, admin }) => {
           <span className="span badge pull-right badge-default">
             {!admin ? formatDistance(venue.distance) : ""}
           </span>
-          {admin ? (<AdminButton tur="primary" ad="Sil" onClick={performClick}/>):""}
-          {admin ? (<AdminButton tur="info" ad="Güncelle" onClick={performClick}/>):""}
+          {admin ? (<AdminButton type="primary" name="Sil" onClick={performClick}/>):""}
+          {admin ? (<AdminButton type="info" name="Güncelle" onClick={performClick}/>):""}
           <p className="address"> {venue.address}</p>
           <p>
             <FoodAndDrinkList foodAndDrinkList={venue.foodanddrink} />
