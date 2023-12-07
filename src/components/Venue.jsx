@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import Rating from "./Rating";
 import FoodAndDrinkList from "./FoodAndDrinkList";
 import AdminButton from "./AdminButton";
-import { useNavigate } from "react-router-dom";
 import {formatDistance} from "../services/Utils";
 const Venue = ({ venue, admin }) => {
   const performClick= (evt) => {

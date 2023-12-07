@@ -1,7 +1,7 @@
 import { NavLink} from "react-router-dom";
 function NavBar() {
   return (
-    <div className="navbar-default navbar navbar-static-top">
+    <div className="navbar-default navbar navbar-fixed-top">
       <div className="container">
         <div className="navbar-header">
           <NavLink className="navbar-brand" to="/">Mekanbul</NavLink>
@@ -24,6 +24,7 @@ function NavBar() {
             <li>
             <NavLink to={"about"}>Hakkında</NavLink> 
             </li>
+          
           </ul>
         </div>
       </div>

@@ -3,7 +3,6 @@ import VenueList from "./VenueList";
 import VenueReducer from "../services/VenueReducer";
 import Header from "./Header";
 import React from "react";
-import axios from "axios";
 import VenueDataService from "../services/VenueDataService";
 const useCookies = (key, defaultValue) => {
   const [cookie, setCookie] = React.useState(
