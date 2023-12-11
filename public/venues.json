@@ -76,5 +76,29 @@
       { "author": "Erkan","rating":5, "date": "2023-12-13", "text": "süper" }
       
     ]
+  },
+  {
+    "id": 4,
+    "name": "Sinan Hocanin Odasi",
+    "address": "Sdu Bilgisayar Muhendisligi",
+    "rating": 5,
+    "foodanddrink": ["ASY", "Web Teknolojileri", "Yazilim Muhendisligi"],
+    "distance": 0.8,
+    "coordinates": [37.83226584629666, 30.524732239878013],
+    "hours": [
+      {
+        "days": "Pazartesi-Cuma",
+        "open": "9:00",
+        "close": "17:00"
+      },
+      {
+        "days": "Cumartesi-Pazar",
+        "open": "11:00",
+        "close": "15:00"
+      }
+    ],
+    "comments": [
+    
+    ]
   }
 ]

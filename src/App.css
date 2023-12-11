@@ -7433,3 +7433,51 @@ legend {
 .affix {
   position: fixed;
 }
+
+.update-button {
+  margin-right: 20px;
+  margin-left: 15px; /* İstediğiniz kadar sağ boşluk ayarlayabilirsiniz */
+  padding: 8px 16px; /* Buton içeriği etrafındaki boşluk */
+  background-color: #3498db; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  border: none; /* Kenarlık yok */
+  border-radius: 4px; /* Kenar yumuşatma */
+  cursor: pointer; /* Fare üzerine gelince el işareti göster */
+  transition: background-color 0.3s; /* Renk geçiş efekti */
+}
+
+.update-button:hover {
+  background-color: #2980b9; /* Fare üzerine gelince buton rengi değişimi */
+}
+
+/* Mekan Sil butonu için özel stil */
+.delete-button {
+  margin-right: 10px; /* İstediğiniz kadar sağ boşluk ayarlayabilirsiniz */
+  padding: 8px 16px; /* Buton içeriği etrafındaki boşluk */
+  background-color: #e74c3c; /* Kırmızı arka plan rengi */
+  color: white; /* Yazı rengi */
+  border: none; /* Kenarlık yok */
+  border-radius: 4px; /* Kenar yumuşatma */
+  cursor: pointer; /* Fare üzerine gelince el işareti göster */
+  transition: background-color 0.3s; /* Renk geçiş efekti */
+}
+
+.delete-button:hover {
+  background-color: #c0392b; /* Fare üzerine gelince buton rengi değişimi */
+}
+
+.add-button {
+  margin-right: 15px;
+  margin-left: 1020px;
+  padding: 8px 16px; /* Buton içeriği etrafındaki boşluk */
+  background-color: green; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  border: none; /* Kenarlık yok */
+  border-radius: 4px; /* Kenar yumuşatma */
+  cursor: pointer; /* Fare üzerine gelince el işareti göster */
+  transition: background-color 0.3s; /* Renk geçiş efekti */
+}
+
+.add-button:hover {
+  background-color: #2980b9; /* Fare üzerine gelince buton rengi değişimi */
+}
